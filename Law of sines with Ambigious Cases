@@ -1,0 +1,23 @@
+
+
+
+def Lawofsineswithambigiouscases(A, Ms, S):
+	''' This function finds a missing angle using a given angle, the corresponding side that is opposite of that angle, and a second side'''
+	Missingangle = S * sin(A) / Ms
+	if Missingangle < 1 and Missingangle > 0:
+		Missingangle = asinh(Missingangle) * 100
+
+		if 180 - Missingangle + A <= 180:
+			return 'The Missing angle could be ' + str(
+			    Missingangle) + ' or ' + str(180 - Missingangle)
+		return 'The missing angle is ' + str(Missingangle)
+	else:
+		return 'This is not a triangle'
+
+		#if 180-Missingangle+A<180:
+		#	return 'The Missing angle could be'+str(Missingangle)+'or'+str(180-Missingangle)
+
+# else:
+#return 'This is not a triangle'
+
+print Lawofsineswithambigiouscases(62, 33, 34)
